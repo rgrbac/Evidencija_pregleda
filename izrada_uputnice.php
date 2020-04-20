@@ -69,7 +69,7 @@
 	$id = $record['ID'];
     
     echo  "<div class='container-fluid'>
-    <form method='POST' action='azuriraj_zaposlenika_back.php?id=$id'> <!--pozivanje beckeed skripte za ažuriranje podataka u bazi-->
+    <form> <!--izrada ispisa-->
       
     <!--ime-->
       <div class='form-group'>
@@ -126,10 +126,6 @@
       </div>
       <!--end pocetak_rs-->
 
-      
-
-
-      <button type='submit' class='btn btn-success btn-block'>Ažuriraj zaposlenika</button>
     </form>
   </div>";
   ?>
@@ -137,6 +133,15 @@
 
 
   <!-- Optional JavaScript -->
+  <script>  //skripta koja poiva funkciju za ispis trenutnog ekrana
+window.onload = function(){
+    window.print();
+};
+
+
+ 
+
+    </script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">

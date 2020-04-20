@@ -15,8 +15,8 @@
   <body style="background-color:#FFE4C4"></body>
   <body>
     <!--Alatna traka-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">Evidencija pregleda</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- pozivanje bootstrap klase za alatnu traku s predefiniranim stilom -->
+        <a class="navbar-brand" href="index.html">Evidencija pregleda</a> 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -24,16 +24,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Povratak <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.html">Povratak <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Unos zaposlenika <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="unos_zaposlenika.html">Unos zaposlenika <span class="sr-only">(current)</span></a> 
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="#">Ažuriranje zaposlenika <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="azuriraj_zaposlenika.php.">Ažuriranje zaposlenika <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="#">Pregled <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="pregled_zaposlenika.php">Pregled zaposlenika <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item active">
                 <a class="nav-link" href="#">Izrada uputnice <span class="sr-only">(current)</span></a>
@@ -45,10 +45,7 @@
                 <a class="nav-link" href="#">Unos RM i PR <span class="sr-only">(current)</span></a>
               </li>       
               <li class="nav-item active">
-                <a class="nav-link" href="#">Brisanje korisnika <span class="sr-only">(current)</span></a>
-              </li>     
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Pomoć <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="pomoc.html">Pomoć <span class="sr-only">(current)</span></a>
               </li>    
               </div>            
           </ul>
@@ -66,13 +63,13 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col">
-      <button type="button" class="btn btn-secondary btn-lg btn-block">Unos zaposlenika</button>
+      <a href = "unos_zaposlenika.html"><button type="button" class="btn btn-secondary btn-lg btn-block">Unos zaposlenika</button></a>
     </div>
     <div class="col">
-      <button type="button" class="btn btn-secondary btn-lg btn-block">Ažuriranje zaposlenika</button>
+      <a href ="azuriraj_zaposlenika.php"><button type="button" class="btn btn-secondary btn-lg btn-block">Ažuriranje zaposlenika</button></a>
     </div>
     <div class="col">
-      <button type="button" class="btn btn-secondary btn-lg btn-block ">Pregled</button>
+     <a href ="pregled_zaposlenika.php"><button type="button" class="btn btn-secondary btn-lg btn-block ">Pregled zaposlenika</button></a>
     </div>
     <div class="col">
       <button type="button" class="btn btn-secondary btn-lg btn-block">Izrada uputnice</button>
@@ -93,10 +90,7 @@
       <small id="rmHelp" class="form-text text-muted">Radno Mjesto i Procjena Rizika</small>
     </div>
     <div class="col">
-      <button type="button" class="btn btn-secondary btn-lg btn-block">Brisanje korisnika</button>
-    </div>
-    <div class="col">
-      <button type="button" class="btn btn-secondary btn-lg btn-block">Pomoć</button>
+      <a href="pomoc.html"><button type="button" class="btn btn-secondary btn-lg btn-block">Pomoć</button></a>
     </div>
     
   </div>
