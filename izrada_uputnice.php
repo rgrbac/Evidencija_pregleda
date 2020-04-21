@@ -66,11 +66,22 @@
     $sql = "SELECT * FROM zaposlenici WHERE ID='$_GET[id]'"; //sql upit za ispis
     $myData = mysqli_query($con,$sql); //pull podataka iz baze
     $record = mysqli_fetch_array($myData);
-	$id = $record['ID'];
+  $id = $record['ID'];
+  $sifra = date("YmdHis");
     
     echo  "<div class='container-fluid'>
+    <h1>UPUTNICA</h1>
     <form> <!--izrada ispisa-->
       
+    <!--šifra-->
+      <div class='form-group'>
+        <label for='sifra'>Šifra uputnice:</label>
+        <input type='text' class='form-control' id='sifra' name='sifra' aria-describedby='imeHelp' value='$sifra' required>
+        <small id='imeHelp' class='form-text text-muted'>Unesite ime zaposlenika</small>
+      </div>
+      <!--end šifra-->
+    
+    
     <!--ime-->
       <div class='form-group'>
         <label for='ime'>ime:</label>
