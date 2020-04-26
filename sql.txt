@@ -1,0 +1,1 @@
+INSERT INTO radna_mjesta (radno_mjesto, procjena_rizika) VALUES('$radno_mjesto','$procjena_rizika')"

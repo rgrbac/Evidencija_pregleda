@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-  <title>Upis novog zaposlenika</title>
+  <title>Unos Radnog mjesta po procjeni rizika</title>
 </head>
 
 <body style="background-color:#FFE4C4"></body>
@@ -60,50 +60,25 @@
 
   <!--izbornik-->
   <div class="container-fluid">
-    <form method="POST" action="unos_zaposlenika.php">  <!--formiranje metode-->
+    <form method="POST" action="unos_rm_i_pr.php">  <!--formiranje metode aa--> 
 
       <form>
         <div class="form-row">
           <div class="col-md-4 mb-4">
-            <label for="rm">Radno Mjesto</label>
-            <input type="text" class="form-control" id="rm" name="rm" aria-describedby="rmHelp" required>
-            <small id="rmHelp" class="form-text text-muted">Unesite radno mjesto</small>
+            <label for="radno_mjesto">Radno Mjesto</label>
+            <input type="text" class="form-control" id="radno_mjesto" name="radno_mjesto" aria-describedby="radno_mjestoHelp" required>
+            <small id="radno_mjestoHelp" class="form-text text-muted">Unesite radno mjesto</small>
           </div>
+
             <div class="col-md-4 mb-4">
-              <label for="prezime">Procjena rizika</label>
-              <input type="text" class="form-control" id="prezime" name="prezime" aria-describedby="prezimeHelp" required>
-              <small id="prezimeHelp" class="form-text text-muted">Unesite procjenu rizika</small>
+              <label for="procjena_rizika">Procjena rizika</label>
+              <input type="text" class="form-control" id="procjena_rizika" name="procjena_rizika" aria-describedby="procjena_rizikaHelp" required>
+              <small id="procjena_rizikaHelp" class="form-text text-muted">Unesite procjenu rizika</small>
             </div>  
            </div>
-         
-
-            <div class="form-row">
-            <div class="col-md-4 mb-4">
-              <label for="mb">Matični broj zaposlenika</label>
-              <input type="number" class="form-control" id="mb" name="mb" aria-describedby="mbHelp" required>
-              <small id="mbHelp" class="form-text text-muted">Unesite matični broj zaposlenika</small>
-            </div>         
-              <div class="col-md-4 mb-4">
-                <label for="pocetak_rs">Početak radnog staža zaposlenika</label>
-                <input type="date" class="form-control" id="pocetak_r" name="pocetak_r" aria-describedby="pocetak_rHelp" required>
-                <small id="pocetak_rHelp" class="form-text text-muted">Unesite početak radnog staža zaposlenika</small>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="col-md-4 mb-4">
-                <label for="oib">OIB zaposlenika</label>
-                <input type="number" class="form-control" id="oib" name="oib" aria-describedby="oibHelp" required>
-                <small id="oibHelp" class="form-text text-muted">Unesite matični broj zaposlenika</small>
-              </div>         
-                <div class="col-md-4 mb-4">
-                  <label for="rm">Radno mjesto zaposlenika</label>
-                  <input type="text" class="form-control" id="rm" name="rm" aria-describedby="rmHelp" required>
-                  <small id="rmHelp" class="form-text text-muted">Unesite radno mjesto zaposlenika</small>
-                </div>
-              </div>
+              
       </div>
-      <button class="btn btn-primary" type="submit">Submit form</button>
+      <button class="btn btn-primary" type="submit">Unos RM po PR</button>
       </form>
 <!--end izbornik-->
 

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Popis zaposlenika</title>
+    <title>Popis Radnih mjesta po pocjeni rizika</title>
 </head>
 
 <body>
@@ -60,32 +60,26 @@
         <div class="row">
             </br>
         </div>
-        <!-- Pregled zaposlenika -->
+        <!-- Ispis rm i pr -->
         <div class="row">
             <div class="col">
                 <?php
 				
-                    $con=mysqli_connect("127.0.0.1","root",""); //spajanje na server
+                    $con=mysqli_connect("127.0.0.1","root",""); //spajanje na server 
                     
                     if(!$con){
                         die("Nesupjelo spajanje: " . mysqli_error());}
                     
                     mysqli_select_db($con,"evzap"); //spajanje na bazu
-                    $sql = "SELECT zaposlenici.ID, zaposlenici.ime, zaposlenici.prezime, zaposlenici.mb, zaposlenici.oib, radna_mjesta.radno_mjesto AS rm, zaposlenici.pocetak_rs, zaposlenici.datum_pregleda, zaposlenici.datum_isteka_pregleda FROM zaposlenici, radna_mjesta WHERE zaposlenici.radno_mjesto = radna_mjesta.ID"; //sql upit za ispis zaposlenika
-                    $myData = mysqli_query($con,$sql); //pull podataka iz baze
+                    $sql = "SELECT radna_mjesta.ID, radna_mjesta.radno_mjesto, radna_mjesta.procjena_rizika FROM radna_mjesta"; //sql upit za ispis RMpoPR
+                    $myData = mysqli_query($con,$sql);  //pull podataka iz baze
                     
                     //ispis podataka
                     echo '<table class="table">
                         <thead>
                             <tr>
-                            <th scope="col">Ime</th>
-                            <th scope="col">Prezime</th>
-                            <th scope="col">Matični broj</th>
-                            <th scope="col">OIB</th>
-                            <th scope="col">Radno Mjesto</th>
-                            <th scope="col">Početak radnog staža</th>
-                            <th scope="col">Datum obavljenog pregleda</th>
-                            <th scope="col">Datum isteka pregleda</th>
+                            <th scope="col">Radno mjesto</th>
+                            <th scope="col">Procjena Rizika</th>
                             <th scope="col"></th>
                             <th scope="col"></th>
                             <th scope="col"></th>
@@ -93,17 +87,9 @@
                         </thead>';
                         while($record = mysqli_fetch_array($myData)){
                             echo "<tr>";
-                            echo "<td>" . $record['ime'] . "</td>";
-                            echo "<td>" . $record['prezime'] . "</td>";
-                            echo "<td>" . $record['mb'] . "</td>";
-                            echo "<td>" . $record['oib'] . "</td>";
-                            echo "<td>" . $record['rm'] . "</td>";
-                            echo "<td>" . $record['pocetak_rs'] . "</td>";
-                            echo "<td>" . $record['datum_pregleda'] . "</td>";
-                            echo "<td>" . $record['datum_isteka_pregleda'] . "</td>";
-                            echo "<td><a href=azuriraj_zaposlenika.php?id=".$record['ID']." <button type='button' class='btn btn-info btn-sm btn-block'>Ažuriraj zaposlenika</button></a></td>";
-                            echo "<td><a href=unos_pregleda.php?id=".$record['ID']." <button type='button' class='btn btn-dark btn-sm btn-block'>Unos pregleda</button></a></td>";
-                            echo "<td><a href=izrada_uputnice.php?id=".$record['ID']." <button type='button' class='btn btn-warning btn-sm btn-block'>Ispis uputnice</button></a></td>";
+                            echo "<td>" . $record['radno_mjesto'] . "</td>";
+                            echo "<td>" . $record['procjena_rizika'] . "</td>";
+                            echo "<td><a href=azuriraj_rm_i_pr.php?id=".$record['ID']." <button type='button' class='btn btn-info btn-sm btn-block'>Ažuriraj</button></a></td>";
                             echo "<td><a onClick=brisanje(".$record['ID'].") <button type='button' class='btn btn-danger btn-sm btn-block'>Izbriši</button></a></td>";
                             echo "</tr>";
                         }

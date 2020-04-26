@@ -63,96 +63,39 @@
         die("Nesupjelo spajanje: " . mysqli_error());}
     
     mysqli_select_db($con,"evzap"); //spajanje na bazu
-    $sql = "SELECT * FROM zaposlenici WHERE ID='$_GET[id]'"; //sql upit za ispis
+    $sql = "SELECT * FROM radna_mjesta WHERE ID='$_GET[id]'"; //sql upit za ispis
     $myData = mysqli_query($con,$sql); //pull podataka iz baze
     $record = mysqli_fetch_array($myData);
-  $id = $record['ID'];
-  $sifra = date("YmdHis");
+	$id = $record['ID'];
     
     echo  "<div class='container-fluid'>
-    <h1>UPUTNICA</h1>
-    <form> <!--izrada ispisa-->
+    <form method='POST' action='azuriraj_rm_i_pr_back.php?id=$id'> <!--pozivanje beckeed skripte za ažuriranje podataka u bazi-->
       
-    <!--šifra-->
+    <!--radno_mjesto-->
       <div class='form-group'>
-        <label for='sifra'>Šifra uputnice:</label>
-        <input type='text' class='form-control' id='sifra' name='sifra' aria-describedby='imeHelp' value='$sifra' required>
-        <small id='imeHelp' class='form-text text-muted'>Unesite ime zaposlenika</small>
-      </div>
-      <!--end šifra-->
-    
-    
-    <!--ime-->
-      <div class='form-group'>
-        <label for='ime'>ime:</label>
-        <input type='text' class='form-control' id='ime' name='ime' aria-describedby='imeHelp' value='$record[ime]' required>
-        <small id='imeHelp' class='form-text text-muted'>Unesite ime zaposlenika</small>
-      </div>
-      <!--end ime-->
-
-      <!--prezime-->
-      <div class='form-group'>
-        <label for='prezime'>prezime:</label>
-        <input type='text' class='form-control' id='prezime' name='prezime' aria-describedby='prezimeHelp' value='$record[prezime]' required>
-        <small id='prezimeHelp' class='form-text text-muted'>Unesite prezime zaposlenika</small>
-      </div>
-      <!--end prezime-->
-
-      <!--mb-->
-      <div class='form-group'>
-        <label for='mb'>mb:</label>
-        <input type='number' class='form-control' id='mb' name='mb' aria-describedby='mbHelp' value='$record[mb]' required>
-        <small id='mbHelp' class='form-text text-muted'>Unesite matični broj zaposlenika</small>
-      </div>
-      <!--end mb-->
-
-      <!--oib-->
-      <div class='form-group'>
-        <label for='oib'>OIB:</label>
-        <input type='number' class='form-control' id='oib' name='oib' aria-describedby='oibHelp' value='$record[oib]' required>
-        <small id='oibHelp' class='form-text text-muted'>Unesite OIB zaposlenika</small>
-      </div>";
-     
-
-     
-      echo "<div class='form-group'>
-        <label for='radno_mjesto'>Radno mjesto:</label>
-        <select type='text' class='form-control' id='radno_mjesto' name='radno_mjesto' aria-describedby='radno_mjestoHelp' required>";
-        $sqlradno_mjesto = "SELECT * FROM radna_mjesta"; //sql upit za ispis
-        $myDataradno_mjesto = mysqli_query($con,$sqlradno_mjesto);
-        while ($recordradno_mjesto =mysqli_fetch_array($myDataradno_mjesto))
-        {
-         echo "<option>" . $recordradno_mjesto['radno_mjesto'] . "</option>";
-        }
-        echo "</select>
-        <small id='radno_mjestoHelp' class='form-text text-muted'>Unesite radno mjesto zaposlenika</small>
+        <label for='radno_mjesto'>Radno Mjesto:</label>
+        <input type='text' class='form-control' id='radno_mjesto' name='radno_mjesto' aria-describedby='radno_mjestoHelp' value='$record[radno_mjesto]' required>
+        <small id='radno_mjestoHelp' class='form-text text-muted'>Unesite radno mjesto</small>
       </div>
       <!--end radno_mjesto-->
 
-      <!--pocetak_rs-->
+      <!--procjena_rizika-->
       <div class='form-group'>
-        <label for='pocetak_rs'>Početak radnog staža:</label>
-        <input type='date' class='form-control' id='pocetak_rs' name='pocetak_rs' aria-describedby='pocetak_rsHelp' value='$record[pocetak_rs]' required>
-        <small id='pocetak_rsHelp' class='form-text text-muted'>Unesite početak radnog staža zaposlenika</small>
+        <label for='procjena_rizika'>Procjena Rizika:</label>
+        <input type='text' class='form-control' id='procjena_rizika' name='procjena_rizika' aria-describedby='procjena_rizikaHelp' value='$record[procjena_rizika]' required>
+        <small id='procjena_rizikaHelp' class='form-text text-muted'>Unesite procjenu rizika</small>
       </div>
-      <!--end pocetak_rs-->
+      <!--end procjena_rizika-->
 
+      
+      <button type='submit' class='btn btn-success btn-block'>Ažuriraj Radno mjesto i procjenu rizika</button>
     </form>
-  </div>";
+  </div>"
   ?>
   <!--end Ažuriranje-->
 
 
   <!-- Optional JavaScript -->
-  <script>  //skripta koja popozivaiva funkciju za ispis trenutnog ekrana
-window.onload = function(){
-    window.print();
-};
-
-
- 
-
-    </script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">

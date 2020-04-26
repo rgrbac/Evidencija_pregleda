@@ -18,6 +18,7 @@
     $pocetak_rs = $_POST['pocetak_rs'];
 
 
+      
     $radno_mjesto = $_POST['radno_mjesto'];
     $sql = "SELECT * FROM radna_mjesta";
     $myData = mysqli_query($con,$sql); //pull podataka iz baze
@@ -37,6 +38,6 @@
         
     }
     else{
-        header('Location: kreriaj_zaposlenika.php');
+        header('Location: index.html');
     }
 ?>
