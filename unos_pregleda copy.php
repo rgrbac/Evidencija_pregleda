@@ -71,13 +71,21 @@
     echo  "<div class='container-fluid'>
     <form method='POST' action='unos_pregleda_back.php?id=$id'> <!--pozivanje beckeed skripte za ažuriranje podataka u bazi-->
       
-      <<!--ime-->
+      <!--datum_pregleda-->
       <div class='form-group'>
-        <label for='ime'>ime:</label>
-        <input type='text' class='form-control' id='ime' name='ime' aria-describedby='imeHelp' value='$record[ime]' required>
-        <small id='imeHelp' class='form-text text-muted'>Unesite ime zaposlenika</small>
+        <label for='datum_pregleda'>Datum obavljenog pregleda:</label>
+        <input type='date' class='form-control' id='datum_pregleda' name='datum_pregleda' aria-describedby='datum_pregledaHelp' value='$record[datum_pregleda]' required>
+        <small id='datum_pregledaHelp' class='form-text text-muted'>Unesite datum pregleda zaposlenika</small>
       </div>
-      <!--end ime-->
+      <!--end datum_pregleda-->
+
+      <!--datum_isteka_pregleda-->
+      <div class='form-group'>
+        <label for='datum_isteka_pregleda'>Datum isteka pregleda:</label>
+        <input type='date' class='form-control' id='datum_isteka_pregleda' name='datum_isteka_pregleda' aria-describedby='datum_isteka_pregledaHelp' value='$record[datum_isteka_pregleda]' required>
+        <small id='datum_isteka_pregledaHelp' class='form-text text-muted'>Unesite datum isteka pregleda zaposlenika</small>
+      </div>
+      <!--end datum_isteka_pregleda-->
 
       
 

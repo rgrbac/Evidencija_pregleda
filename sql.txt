@@ -1,1 +1,3 @@
 INSERT INTO radna_mjesta (radno_mjesto, procjena_rizika) VALUES('$radno_mjesto','$procjena_rizika')"
+
+UPDATE zaposlenici SET datum_pregleda = '$datum_pregleda', datum_isteka_pregleda = '$datum_isteka_pregleda' WHERE ID = '$id

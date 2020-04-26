@@ -60,6 +60,9 @@
         <div class="row">
             </br>
         </div>
+
+         
+
         <!-- Pregled zaposlenika -->
         <div class="row">
             <div class="col">
@@ -110,8 +113,11 @@
                  ?>
             </div>
         </div>
-
+       
     </div>
+
+
+
     <!--end Ispis zaposlenika-->
     <!-- Optional JavaScript -->
     <!-- Potvrda brisanja -->
