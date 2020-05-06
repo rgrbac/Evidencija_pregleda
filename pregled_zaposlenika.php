@@ -15,8 +15,8 @@
 
 <body>
     <!--navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">Evidencija pregleda</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- pozivanje bootstrap klase za alatnu traku s predefiniranim stilom -->
+        <a class="navbar-brand" href="index.html">Evidencija pregleda</a> 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,23 +27,17 @@
               <a class="nav-link" href="index.html">Povratak <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Unos zaposlenika <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="azuriraj_zaposlenika.php">Ažuriranje zaposlenika <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="unos_zaposlenika.html">Unos zaposlenika <span class="sr-only">(current)</span></a> 
               </li>
               <li class="nav-item active">
                 <a class="nav-link" href="pregled_zaposlenika.php">Pregled zaposlenika <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="#">Izrada uputnice <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="pregled_rm_i_pr.php">Pregled RM i PR <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="unos_rm_i_pr.html">Unos RM i PR <span class="sr-only">(current)</span></a>
               </li>       
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Unos pregleda <span class="sr-only">(current)</span></a>
-              </li>   
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Unos RM i PR <span class="sr-only">(current)</span></a>
-              </li>        
               <li class="nav-item active">
                 <a class="nav-link" href="pomoc.html">Pomoć <span class="sr-only">(current)</span></a>
               </li>    
@@ -77,11 +71,11 @@
                     $sql = "SELECT zaposlenici.ID, zaposlenici.ime, zaposlenici.prezime, zaposlenici.mb, zaposlenici.oib, radna_mjesta.radno_mjesto AS rm, zaposlenici.pocetak_rs, zaposlenici.datum_pregleda, zaposlenici.datum_isteka_pregleda FROM zaposlenici, radna_mjesta WHERE zaposlenici.radno_mjesto = radna_mjesta.ID"; //sql upit za ispis zaposlenika
                     $myData = mysqli_query($con,$sql); //pull podataka iz baze
                     
-                    //ispis podataka
-                    echo '<table class="table">
-                        <thead>
+                    //kreiranje klase table za ispis podataka   
+                    echo '<table class="table"> 
+                        <thead class="thead-light">
                             <tr>
-                            <th scope="col">Ime</th>
+                            <th scope="col">Ime</th> 
                             <th scope="col">Prezime</th>
                             <th scope="col">Matični broj</th>
                             <th scope="col">OIB</th>
@@ -96,18 +90,19 @@
                         </thead>';
                         while($record = mysqli_fetch_array($myData)){
                             echo "<tr>";
-                            echo "<td>" . $record['ime'] . "</td>";
-                            echo "<td>" . $record['prezime'] . "</td>";
-                            echo "<td>" . $record['mb'] . "</td>";
-                            echo "<td>" . $record['oib'] . "</td>";
-                            echo "<td>" . $record['rm'] . "</td>";
-                            echo "<td>" . $record['pocetak_rs'] . "</td>";
-                            echo "<td>" . $record['datum_pregleda'] . "</td>";
-                            echo "<td>" . $record['datum_isteka_pregleda'] . "</td>";
-                            echo "<td><a href=azuriraj_zaposlenika.php?id=".$record['ID']." <button type='button' class='btn btn-info btn-sm btn-block'>Ažuriraj zaposlenika</button></a></td>";
-                            echo "<td><a href=unos_pregleda.php?id=".$record['ID']." <button type='button' class='btn btn-dark btn-sm btn-block'>Unos pregleda</button></a></td>";
-                            echo "<td><a href=izrada_uputnice.php?id=".$record['ID']." <button type='button' class='btn btn-warning btn-sm btn-block'>Ispis uputnice</button></a></td>";
-                            echo "<td><a onClick=brisanje(".$record['ID'].") <button type='button' class='btn btn-danger btn-sm btn-block'>Izbriši</button></a></td>";
+                            echo "<td style='background-color:#90ee90'>" . $record['ime'] . "</td>";
+                            echo "<td style='background-color:#90ee90'>" . $record['prezime'] . "</td>";
+                            echo "<td style='background-color:#90ee90'>" . $record['mb'] . "</td>";
+                            echo "<td style='background-color:#90ee90'>" . $record['oib'] . "</td>";
+                            echo "<td style='background-color:#90ee90'>" . $record['rm'] . "</td>";
+                            echo "<td style='background-color:#90ee90'>" . $record['pocetak_rs'] . "</td>";
+                            echo "<td style='background-color:#90ee90'>" . $record['datum_pregleda'] . "</td>";
+                            echo "<td style='background-color:#90ee90'>" . $record['datum_isteka_pregleda'] . "</td>";
+                            echo "<td style='background-color:#90ee90'><a href=azuriraj_zaposlenika.php?id=".$record['ID']." <button type='button' class='btn btn-info btn-sm btn-block'>Ažuriraj zaposlenika</button></a></td>";
+                            //kreriranje klase buton koja poziva php skriptu za taj ID djelatnika
+                            echo "<td style='background-color:#90ee90'><a href=unos_pregleda.php?id=".$record['ID']." <button type='button' class='btn btn-dark btn-sm btn-block'>Unos pregleda</button></a></td>";
+                            echo "<td style='background-color:#90ee90'><a href=izrada_uputnice.php?id=".$record['ID']." <button type='button' class='btn btn-warning btn-sm btn-block'>Ispis uputnice</button></a></td>";
+                            echo "<td style='background-color:#90ee90'><a onClick=brisanje(".$record['ID'].") <button type='button' class='btn btn-danger btn-sm btn-block'>Izbriši</button></a></td>";
                             echo "</tr>";
                         }
                  ?>

@@ -15,8 +15,8 @@
 
 <body>
   <!--navbar-->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">Evidencija pregleda</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- pozivanje bootstrap klase za alatnu traku s predefiniranim stilom -->
+        <a class="navbar-brand" href="index.html">Evidencija pregleda</a> 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,22 +27,16 @@
               <a class="nav-link" href="index.html">Povratak <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Unos zaposlenika <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="azuriraj_zaposlenika">Ažuriranje zaposlenika <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="unos_zaposlenika.html">Unos zaposlenika <span class="sr-only">(current)</span></a> 
               </li>
               <li class="nav-item active">
                 <a class="nav-link" href="pregled_zaposlenika.php">Pregled zaposlenika <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="#">Izrada uputnice <span class="sr-only">(current)</span></a>
-              </li>       
+                <a class="nav-link" href="pregled_rm_i_pr.php">Pregled RM i PR <span class="sr-only">(current)</span></a>
+              </li>
               <li class="nav-item active">
-                <a class="nav-link" href="#">Unos pregleda <span class="sr-only">(current)</span></a>
-              </li>   
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Unos RM i PR <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="unos_rm_i_pr.html">Unos RM i PR <span class="sr-only">(current)</span></a>
               </li>       
               <li class="nav-item active">
                 <a class="nav-link" href="pomoc.html">Pomoć <span class="sr-only">(current)</span></a>
@@ -71,13 +65,21 @@
     echo  "<div class='container-fluid'>
     <form method='POST' action='unos_pregleda_back.php?id=$id'> <!--pozivanje beckeed skripte za ažuriranje podataka u bazi-->
       
-      <<!--ime-->
-      <div class='form-group'>
-        <label for='ime'>ime:</label>
-        <input type='text' class='form-control' id='ime' name='ime' aria-describedby='imeHelp' value='$record[ime]' required>
-        <small id='imeHelp' class='form-text text-muted'>Unesite ime zaposlenika</small>
-      </div>
-      <!--end ime-->
+    <!--datum_pregleda-->
+    <div class='form-group'>
+      <label for='datum_pregleda'>Datum obavljenog pregleda:</label>
+      <input type='date' class='form-control' id='datum_pregleda' name='datum_pregleda' aria-describedby='datum_pregledaHelp' value='$record[datum_pregleda]' required>
+      <small id='datum_pregledaHelp' class='form-text text-muted'>Unesite datum pregleda zaposlenika</small>
+    </div>
+    <!--end datum_pregleda-->
+
+    <!--datum_isteka_pregleda-->
+    <div class='form-group'>
+      <label for='datum_isteka_pregleda'>Datum isteka pregleda:</label>
+      <input type='date' class='form-control' id='datum_isteka_pregleda' name='datum_isteka_pregleda' aria-describedby='datum_isteka_pregledaHelp' value='$record[datum_isteka_pregleda]' required>
+      <small id='datum_isteka_pregledaHelp' class='form-text text-muted'>Unesite datum isteka pregleda zaposlenika</small>
+    </div>
+    <!--end datum_isteka_pregleda-->
 
       
 

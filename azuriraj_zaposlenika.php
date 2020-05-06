@@ -15,8 +15,8 @@
 
 <body>
   <!--navbar-->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">Evidencija pregleda</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- pozivanje bootstrap klase za alatnu traku s predefiniranim stilom -->
+        <a class="navbar-brand" href="index.html">Evidencija pregleda</a> 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,22 +27,16 @@
               <a class="nav-link" href="index.html">Povratak <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Unos zaposlenika <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="azuriraj_zaposlenika">Ažuriranje zaposlenika <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="unos_zaposlenika.html">Unos zaposlenika <span class="sr-only">(current)</span></a> 
               </li>
               <li class="nav-item active">
                 <a class="nav-link" href="pregled_zaposlenika.php">Pregled zaposlenika <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="#">Izrada uputnice <span class="sr-only">(current)</span></a>
-              </li>       
+                <a class="nav-link" href="pregled_rm_i_pr.php">Pregled RM i PR <span class="sr-only">(current)</span></a>
+              </li>
               <li class="nav-item active">
-                <a class="nav-link" href="#">Unos pregleda <span class="sr-only">(current)</span></a>
-              </li>   
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Unos RM i PR <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="unos_rm_i_pr.html">Unos RM i PR <span class="sr-only">(current)</span></a>
               </li>       
               <li class="nav-item active">
                 <a class="nav-link" href="pomoc.html">Pomoć <span class="sr-only">(current)</span></a>
@@ -50,7 +44,7 @@
               </div>            
           </ul>
         </div>
-      </nav>
+      </nav>s
   <!--end navbar-->
   <div class="row">
     </br>

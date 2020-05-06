@@ -15,6 +15,15 @@
     $mb = $_POST['mb'];
     $oib = $_POST['oib'];
     $radno_mjesto = $_POST['radno_mjesto'];
+    $sql = "SELECT * FROM radna_mjesta";
+    $myData = mysqli_query($con,$sql); //pull podataka iz baze
+      while($record = mysqli_fetch_array($myData)){
+        //Prebacivanje teksta u ID
+        if(strcmp($record['radno_mjesto'],$radno_mjesto) == 0){
+          $radno_mjesto = $record['ID'];
+        }        
+      }   
+    
     $pocetak_rs = $_POST['pocetak_rs'];
    
 

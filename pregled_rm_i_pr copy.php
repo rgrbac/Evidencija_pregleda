@@ -13,7 +13,6 @@
     <title>Popis Radnih mjesta po pocjeni rizika</title>
 </head>
 
-
 <body>
     <!--navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- pozivanje bootstrap klase za alatnu traku s predefiniranim stilom -->
@@ -70,11 +69,9 @@
                     $myData = mysqli_query($con,$sql);  //pull podataka iz baze
                     
                     ////kreiranje klase table za ispis podataka   
-                    echo '
-                    
-                    <table class="table">
-                        <thead class="thead-light">
-                            <tr >
+                    echo '<table class="table">
+                        <thead>
+                            <tr>
                             <th scope="col">Radno mjesto</th>
                             <th scope="col">Procjena Rizika</th>
                             <th scope="col"></th>
@@ -83,15 +80,13 @@
                             </tr>
                         </thead>';
                         while($record = mysqli_fetch_array($myData)){
-                            
                             echo "<tr>";
-                            echo "<td style='background-color:#90ee90'>" . $record['radno_mjesto'] . "</td>";
-                            echo "<td style='background-color:#90ee90'>" . $record['procjena_rizika'] . "</td>";
-                            echo "<td style='background-color:#90ee90'><a href=azuriraj_rm_i_pr.php?id=".$record['ID']." <button type='button' class='btn btn-info btn-sm btn-block'>Ažuriraj</button></a></td>";
+                            echo "<td>" . $record['radno_mjesto'] . "</td>";
+                            echo "<td>" . $record['procjena_rizika'] . "</td>";
+                            echo "<td><a href=azuriraj_rm_i_pr.php?id=".$record['ID']." <button type='button' class='btn btn-info btn-sm btn-block'>Ažuriraj</button></a></td>";
                             //kreriranje klase buton koja poziva php skriptu za taj ID djelatnika
-                            echo "<td style='background-color:#90ee90'><a onClick=brisanje(".$record['ID'].") <button type='button' class='btn btn-danger btn-sm btn-block'>Izbriši</button></a></td>";
+                            echo "<td><a onClick=brisanje(".$record['ID'].") <button type='button' class='btn btn-danger btn-sm btn-block'>Izbriši</button></a></td>";
                             echo "</tr>";
-                           
                         }
                  ?>
             </div>

@@ -16,42 +16,33 @@
 <body style="background-color:#FFE4C4"></body>
 <body>
   <!--alatna traka-->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Evidencija pregleda</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- pozivanje bootstrap klase za alatnu traku s predefiniranim stilom -->
+    <a class="navbar-brand" href="index.html">Evidencija pregleda</a> 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
+  
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Povratak <span class="sr-only">(current)</span></a>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Povratak <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="unos_zaposlenika.html">Unos zaposlenika <span class="sr-only">(current)</span></a> 
           </li>
           <li class="nav-item active">
-              <a class="nav-link" href="#">Unos zaposlenika <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="azuriraj_zaposlenika">Ažuriranje zaposlenika <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="pregled_zaposlenika.php">Pregled zaposlenika <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Izrada uputnice <span class="sr-only">(current)</span></a>
-            </li>       
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Unos pregleda <span class="sr-only">(current)</span></a>
-            </li>   
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Unos RM i PR <span class="sr-only">(current)</span></a>
-            </li>       
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Brisanje korisnika <span class="sr-only">(current)</span></a>
-            </li>     
-            <li class="nav-item active">
-              <a class="nav-link" href="pomoc.html">Pomoć <span class="sr-only">(current)</span></a>
-            </li>    
+            <a class="nav-link" href="pregled_zaposlenika.php">Pregled zaposlenika <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="pregled_rm_i_pr.php">Pregled RM i PR <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="unos_rm_i_pr.html">Unos RM i PR <span class="sr-only">(current)</span></a>
+          </li>       
+          <li class="nav-item active">
+            <a class="nav-link" href="pomoc.html">Pomoć <span class="sr-only">(current)</span></a>
+          </li>    
+          </div>            
       </ul>
     </div>
   </nav>
@@ -63,7 +54,7 @@
 
   <!--izbornik-->
   <div class="container-fluid">
-    <form method="POST" action="unos_zaposlenika.php">  <!--formiranje metode-->
+    <form method="POST" action="unos_zaposlenika.php">  <!--formiranje metode pozivanje back end PHP metode-->
 
       <form>
         <div class="form-row">
@@ -98,15 +89,30 @@
                 <label for="oib">OIB zaposlenika</label>
                 <input type="number" class="form-control" id="oib" name="oib" aria-describedby="oibHelp" required>
                 <small id="oibHelp" class="form-text text-muted">Unesite matični broj zaposlenika</small>
-              </div>         
-                <div class="col-md-4 mb-4">
-                  <label for="radno_mjesto">Radno mjesto zaposlenika</label>
-                  <input type="text" class="form-control" id="radno_mjesto" name="radno_mjesto" aria-describedby="radno_mjestoHelp" required>
-                  <small id="radno_mjestoHelp" class="form-text text-muted">Unesite radno mjesto zaposlenika</small>
-                </div>
-              </div>
+              </div>  
+              <?php       
+              echo "<div class='form-group'>
+            <label for='radno_mjesto'>Radno mjesto:</label>
+            <select type='text' class='form-control' id='radno_mjesto' name='radno_mjesto' aria-describedby='radno_mjestoHelp' required>";
+            $con=mysqli_connect("127.0.0.1","root",""); //spajanje na server
+                    
+            if(!$con){
+                die("Nesupjelo spajanje: " . mysqli_error());}
+            
+            mysqli_select_db($con,"evzap"); //spajanje na bazu
+            $sqlradno_mjesto = "SELECT * FROM radna_mjesta"; //sql upit za ispis
+            $myDataradno_mjesto = mysqli_query($con,$sqlradno_mjesto);
+            while ($recordradno_mjesto =mysqli_fetch_array($myDataradno_mjesto))
+             {
+                echo "<option>" . $recordradno_mjesto['radno_mjesto'] . "</option>";
+             }
+        echo "</select>
+        <small id='radno_mjestoHelp' class='form-text text-muted'>Unesite radno mjesto zaposlenika</small>
       </div>
-      <button class="btn btn-primary" type="submit">Unos zaposlenika</button>
+      <!--end radno_mjesto-->";
+      ?>
+      </div>
+      <button class="btn btn-primary" type="submit">Spremi zaposlenika</button> <!--end izbornik-->
       </form>
 <!--end izbornik-->
 

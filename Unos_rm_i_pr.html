@@ -16,39 +16,33 @@
 <body style="background-color:#FFE4C4"></body>
 <body>
   <!--alatna traka-->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Evidencija pregleda</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- pozivanje bootstrap klase za alatnu traku s predefiniranim stilom -->
+    <a class="navbar-brand" href="index.html">Evidencija pregleda</a> 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
+  
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Povratak <span class="sr-only">(current)</span></a>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Povratak <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="unos_zaposlenika.html">Unos zaposlenika <span class="sr-only">(current)</span></a> 
           </li>
           <li class="nav-item active">
-              <a class="nav-link" href="#">Unos zaposlenika <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="azuriraj_zaposlenika">Ažuriranje zaposlenika <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="pregled_zaposlenika.php">Pregled zaposlenika <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Izrada uputnice <span class="sr-only">(current)</span></a>
-            </li>       
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Unos pregleda <span class="sr-only">(current)</span></a>
-            </li>   
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Unos RM i PR <span class="sr-only">(current)</span></a>
-            </li>        
-            <li class="nav-item active">
-              <a class="nav-link" href="pomoc.html">Pomoć <span class="sr-only">(current)</span></a>
-            </li>    
+            <a class="nav-link" href="pregled_zaposlenika.php">Pregled zaposlenika <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="pregled_rm_i_pr.php">Pregled RM i PR <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="unos_rm_i_pr.html">Unos RM i PR <span class="sr-only">(current)</span></a>
+          </li>       
+          <li class="nav-item active">
+            <a class="nav-link" href="pomoc.html">Pomoć <span class="sr-only">(current)</span></a>
+          </li>    
+          </div>            
       </ul>
     </div>
   </nav>
@@ -58,9 +52,9 @@
 </div>
 
 
-  <!--izbornik-->
+  <!--forma-->
   <div class="container-fluid">
-    <form method="POST" action="unos_rm_i_pr.php">  <!--formiranje metode aa--> 
+    <form method="POST" action="unos_rm_i_pr.php">  <!--formiranje metode POST i poziv php skripte za spremanje podataka--> 
 
       <form>
         <div class="form-row">
@@ -78,9 +72,9 @@
            </div>
               
       </div>
-      <button class="btn btn-primary" type="submit">Unos RM po PR</button>
+      <button class="btn btn-primary" type="submit">Unos RM po PR</button> <!--klasa btn koja poziva metodu POST--> 
       </form>
-<!--end izbornik-->
+<!--end forma-->
 
 
 

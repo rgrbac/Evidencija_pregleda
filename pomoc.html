@@ -9,48 +9,46 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <title>Glavni izbornik</title>
+    
+    
+   
   </head>
+ 
 
   
-  <body style="background-color:#FFE4C4"></body>
+  <body style="background-color:#e6ffcc"></body>
   <body>
     <!--Alatna traka-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">Evidencija pregleda</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Povratak <span class="sr-only">(current)</span></a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- pozivanje bootstrap klase za alatnu traku s predefiniranim stilom -->
+      <a class="navbar-brand" href="index.html">Evidencija pregleda</a> 
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Povratak <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+              <a class="nav-link" href="unos_zaposlenika.html">Unos zaposlenika <span class="sr-only">(current)</span></a> 
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Unos zaposlenika <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="azuriraj_zaposlenika">Ažuriranje zaposlenika <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="pregled_zaposlenika.php">Pregled zaposlenika <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Izrada uputnice <span class="sr-only">(current)</span></a>
-              </li>       
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Unos pregleda <span class="sr-only">(current)</span></a>
-              </li>   
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Unos RM i PR <span class="sr-only">(current)</span></a>
-              </li>        
-              <li class="nav-item active">
-                <a class="nav-link" href="pomoc.html">Pomoć <span class="sr-only">(current)</span></a>
-              </li>    
-              </div>            
-          </ul>
-        </div>
-      </nav>
+              <a class="nav-link" href="pregled_zaposlenika.php">Pregled zaposlenika <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="pregled_rm_i_pr.php">Pregled RM i PR <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="unos_rm_i_pr.html">Unos RM i PR <span class="sr-only">(current)</span></a>
+            </li>       
+            <li class="nav-item active">
+              <a class="nav-link" href="pomoc.html">Pomoć <span class="sr-only">(current)</span></a>
+            </li>    
+            </div>            
+        </ul>
+      </div>
+    </nav>
   <!--Kraj alatne trake-->
 
 <!--izbornik-->
@@ -71,6 +69,88 @@
         </div>
     </div>
   </div>
+  <table class="table  table-sm table-bordered black table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Radno mjesto</th>
+        <th scope="col">Provjera rizika</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Tehničar općeg održavanja</td>
+        <td>1 10</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Operater sterilnog doziranja</td>
+        <td>1 16 40</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Tehničar izrade</td>
+        <td>1 16 40</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>Operater sanitarnog održavanja proizvodnje</td>
+        <td>1 16 40</td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td>Operater na finalizaciji</td>
+        <td>1 16 19</td>
+      </tr>
+      <tr>
+        <th scope="row">6</th>
+        <td>Operater prihvata poluproizvoda</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <th scope="row">7</th>
+        <td>Operater pripreme materijala u proizvodnji</td>
+        <td>1 16 40</td>
+      </tr>
+      <tr>
+        <th scope="row">8</th>
+        <td>Operater sanitarnog održavanja sterilne proizvodnje</td>
+        <td>1 16 40</td>
+      </tr>
+      <tr>
+        <th scope="row">9</th>
+        <td>Operater sanitarnog održavanja u pripremi radne robe</td>
+        <td>1 16 40</td>
+      </tr>
+      <tr>
+        <th scope="row">10</th>
+        <td>Tehničar proizvodnog održavanja</td>
+        <td>1 14</td>
+      </tr>
+      <tr>
+        <th scope="row">11</th>
+        <td>Specijalist strojarskog održavanja i el. Tehničkog održavanja</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <th scope="row">12</th>
+        <td>Voditelj monitoringa čistih prostora</td>
+        <td>16 40</td>
+      </tr>
+      <tr>
+        <th scope="row">13</th>
+        <td>Specijalist monitoringa čistih prostora</td>
+        <td>16 40</td>
+      </tr>
+      <tr>
+        <th scope="row"></th>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <!--end izbornik-->
 
 
