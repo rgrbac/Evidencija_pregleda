@@ -27,7 +27,7 @@
               <a class="nav-link" href="index.html">Povratak <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="unos_zaposlenika.html">Unos zaposlenika <span class="sr-only">(current)</span></a> 
+                <a class="nav-link" href="unos_zaposlenika_forma.php">Unos zaposlenika <span class="sr-only">(current)</span></a> 
               </li>
               <li class="nav-item active">
                 <a class="nav-link" href="pregled_zaposlenika.php">Pregled zaposlenika <span class="sr-only">(current)</span></a>
@@ -134,7 +134,27 @@
     </form>
   </div>";
   ?>
+<div class="container-fluid">
+
+
+  <form>
+        <div class="form-row">
+          <div class="col-md-4 mb-4">
+            <label for="potpis_zaposlenika"></label>
+            <input type="potpis_zaposlenika" class="form-control"  name="potpis_zaposlenika" aria-describedby="potpis_zaposlenikaHelp" required>
+            <small id="potpis_zaposlenikaHelp" class="form-text text-muted">Potpis zaposlenika</small>
+          </div>
+            <div class="col-md-4 mb-4">
+              <label for="Djelatnik_zastite_na_radu"></label>
+              <input type="text" class="form-control"  name="Djelatnik_zastite_na_radu" aria-describedby="Djelatnik_zastite_na_raduHelp" required>
+              <small id="Djelatnik_zastite_na_raduHelp" class="form-text text-muted">Sandro Car</small>
+            </div>  
+           </div>
+
+
   <!--end Ažuriranje-->
+
+
 
 
   <!-- Optional JavaScript -->

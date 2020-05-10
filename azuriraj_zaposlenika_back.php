@@ -29,7 +29,7 @@
       }   
    
     //sql upit za punjenje tablice
-    $sql = "UPDATE zaposlenici SET ime = '$ime', prezime = '$prezime', mb = '$mb' , oib = '$oib' , pocetak_rs = '$pocetak_rs' WHERE ID = '$id'";
+    $sql = "UPDATE zaposlenici SET ime = '$ime', prezime = '$prezime', mb = '$mb' , oib = '$oib' , pocetak_rs = '$pocetak_rs', radno_mjesto='$radno_mjesto' WHERE ID = '$id'";
 
     //Uspješno . neuspješno punjenje
     if(!mysqli_query($con,$sql)){
