@@ -5,6 +5,9 @@
 		die("Nesupjelo spajanje: " . mysqli_error());
 	}
 	mysqli_select_db($con,"evzap");
+
+
+	
 	$sql = "DELETE FROM radna_mjesta WHERE ID='$_GET[id]'";
 	$myData = mysqli_query($con,$sql);
 	

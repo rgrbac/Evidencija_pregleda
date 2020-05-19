@@ -23,10 +23,7 @@
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Povratak <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
+              <li class="nav-item active">
                 <a class="nav-link" href="unos_zaposlenika_forma.php">Unos zaposlenika <span class="sr-only">(current)</span></a> 
               </li>
               <li class="nav-item active">
@@ -37,6 +34,9 @@
               </li>
               <li class="nav-item active">
                 <a class="nav-link" href="unos_rm_i_pr.html">Unos RM i PR <span class="sr-only">(current)</span></a>
+              </li>       
+              <li class="nav-item active">
+                <a class="nav-link" href="arhiva_zaposlenika.php">Arhiva zaposlenika <span class="sr-only">(current)</span></a>
               </li>       
               <li class="nav-item active">
                 <a class="nav-link" href="pomoc.html">Pomoć <span class="sr-only">(current)</span></a>

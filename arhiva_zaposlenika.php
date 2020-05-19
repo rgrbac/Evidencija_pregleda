@@ -10,9 +10,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Popis Radnih mjesta po pocjeni rizika</title>
+    <title>Popis zaposlenika</title>
 </head>
-
 
 <body>
     <!--navbar-->
@@ -36,10 +35,10 @@
               </li>
               <li class="nav-item active">
                 <a class="nav-link" href="unos_rm_i_pr.html">Unos RM i PR <span class="sr-only">(current)</span></a>
-              </li>       
+              </li> 
               <li class="nav-item active">
                 <a class="nav-link" href="arhiva_zaposlenika.php">Arhiva zaposlenika <span class="sr-only">(current)</span></a>
-              </li>       
+              </li>             
               <li class="nav-item active">
                 <a class="nav-link" href="pomoc.html">Pomoć <span class="sr-only">(current)</span></a>
               </li>    
@@ -56,61 +55,65 @@
         <div class="row">
             </br>
         </div>
-        <!-- Ispis rm i pr -->
+
+         
+
+        <!-- Arhiva zaposlenika -->
         <div class="row">
             <div class="col">
                 <?php
 				
-                    $con=mysqli_connect("127.0.0.1","root",""); //spajanje na server 
+                    $con=mysqli_connect("127.0.0.1","root",""); //spajanje na server
                     
                     if(!$con){
                         die("Nesupjelo spajanje: " . mysqli_error());}
                     
                     mysqli_select_db($con,"evzap"); //spajanje na bazu
-                    $sql = "SELECT radna_mjesta.ID, radna_mjesta.radno_mjesto, radna_mjesta.procjena_rizika FROM radna_mjesta"; //sql upit za ispis RMpoPR
-                    $myData = mysqli_query($con,$sql);  //pull podataka iz baze
+                    $sql = "SELECT arhiva_zaposlenika.ID, arhiva_zaposlenika.ime, arhiva_zaposlenika.prezime, arhiva_zaposlenika.mb, arhiva_zaposlenika.oib, arhiva_zaposlenika.radno_mjesto , arhiva_zaposlenika.pocetak_rs, arhiva_zaposlenika.datum_pregleda, arhiva_zaposlenika.datum_isteka_pregleda, arhiva_zaposlenika.vrijeme_promjene FROM arhiva_zaposlenika"; //sql upit za ispis zaposlenika
+                    $myData = mysqli_query($con,$sql); //pull podataka iz baze
                     
-                    ////kreiranje klase table za ispis podataka   
-                    echo '
-                    
-                    <table class="table">
+                    //kreiranje klase table za ispis podataka   
+                    echo '<table class="table"> 
                         <thead class="thead-light">
-                            <tr >
-                            <th scope="col">Radno mjesto</th>
-                            <th scope="col">Procjena Rizika</th>
+                            <tr>
+                            <th scope="col">Ime</th> 
+                            <th scope="col">Prezime</th>
+                            <th scope="col">Matični broj</th>
+                            <th scope="col">OIB</th>
+                            <th scope="col">Radno Mjesto</th>
+                            <th scope="col">Početak radnog staža</th>
+                            <th scope="col">Datum obavljenog pregleda</th>
+                            <th scope="col">Datum isteka pregleda</th>
+                            <th scope="col">Datum i vrijeme promjene</th>
                             <th scope="col"></th>
                             <th scope="col"></th>
                             <th scope="col"></th>
                             </tr>
                         </thead>';
                         while($record = mysqli_fetch_array($myData)){
-                            
                             echo "<tr>";
+                            echo "<td style='background-color:#90ee90'>" . $record['ime'] . "</td>";
+                            echo "<td style='background-color:#90ee90'>" . $record['prezime'] . "</td>";
+                            echo "<td style='background-color:#90ee90'>" . $record['mb'] . "</td>";
+                            echo "<td style='background-color:#90ee90'>" . $record['oib'] . "</td>";
                             echo "<td style='background-color:#90ee90'>" . $record['radno_mjesto'] . "</td>";
-                            echo "<td style='background-color:#90ee90'>" . $record['procjena_rizika'] . "</td>";
-                            echo "<td style='background-color:#90ee90'><a href=azuriraj_rm_i_pr.php?id=".$record['ID']." <button type='button' class='btn btn-info btn-sm btn-block'>Ažuriraj</button></a></td>";
+                            echo "<td style='background-color:#90ee90'>" . $record['pocetak_rs'] . "</td>";
+                            echo "<td style='background-color:#90ee90'>" . $record['datum_pregleda'] . "</td>";
+                            echo "<td style='background-color:#90ee90'>" . $record['datum_isteka_pregleda'] . "</td>";
+                            echo "<td style='background-color:#90ee90'>" . $record['vrijeme_promjene'] . "</td>";
                             //kreriranje klase buton koja poziva php skriptu za taj ID djelatnika
-                            echo "<td style='background-color:#90ee90'><a onClick=brisanje(".$record['ID'].") <button type='button' class='btn btn-danger btn-sm btn-block'>Izbriši</button></a></td>";
-                            echo "</tr>";
-                           
+                          
                         }
                  ?>
             </div>
         </div>
-
+       
     </div>
-    <!--end Ispis zaposlenika-->
-    <!-- Optional JavaScript -->
-    <!-- Potvrda brisanja -->
-    <script>
-        function brisanje(id) {
-            var odgovor = false;
-            odgovor = confirm("Jeste li sigurni?");
-            if (odgovor) {
-                window.open("izbrisi_rm_i_pr.php?id=" + id, "_parent");   
-            }
-        }
-    </script>
+
+
+
+   
+    
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
