@@ -61,12 +61,8 @@
             <div class="col">
                 <?php
 				
-                    $con=mysqli_connect("127.0.0.1","root",""); //spajanje na server 
-                    
-                    if(!$con){
-                        die("Nesupjelo spajanje: " . mysqli_error());}
-                    
-                    mysqli_select_db($con,"evzap"); //spajanje na bazu
+                require ("povezivanje.php");
+                
                     $sql = "SELECT radna_mjesta.ID, radna_mjesta.radno_mjesto, radna_mjesta.procjena_rizika FROM radna_mjesta"; //sql upit za ispis RMpoPR
                     $myData = mysqli_query($con,$sql);  //pull podataka iz baze
                     

@@ -1,4 +1,5 @@
 <?php
+/*
 //fetch.php
 
 if(issset($_POST["querry"]))

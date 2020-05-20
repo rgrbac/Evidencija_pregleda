@@ -1,18 +1,11 @@
 <?php
-    $con = mysqli_connect('127.0.0.1','root',''); //spajanje na server
-
-    if(!$con){
-		echo "Neuspjelo spajanje na bazu";
-    }
-    
-    if(!mysqli_select_db($con,'evzap')){ //spajanje na bazu
-		echo "Baza podataka nije izabrana";
-    }
+    require ("povezivanje.php");
     
     //fill varijable
     $ime = $_POST['ime'];
     $prezime = $_POST['prezime'];
     $mb = $_POST['mb'];
+    $pocetak_rs = $_POST['pocetak_rs'];
     $oib = $_POST['oib'];
     $radno_mjesto = $_POST['radno_mjesto'];
     $sql = "SELECT * FROM radna_mjesta";
@@ -24,10 +17,7 @@
         }        
       }   
     
-    $pocetak_rs = $_POST['pocetak_rs'];
-   
-
-
+    
 
 
 
@@ -35,14 +25,18 @@
 
    
     //sql upit za punjenje tablice
-    $sql = "INSERT INTO zaposlenici (ime, prezime, mb, oib, radno_mjesto, pocetak_rs) VALUES('$ime','$prezime','$mb','$oib','$radno_mjesto','$pocetak_rs')";
+   $sql = "INSERT INTO zaposlenici (ime, prezime, mb, oib, radno_mjesto, pocetak_rs) VALUES ('$ime','$prezime','$mb','$oib','$radno_mjesto','$pocetak_rs')";
 
     //Uspješno . neuspješno punjenje
     if(!mysqli_query($con,$sql)){
         echo "Podaci nisu uneseni u bazu podataka";
+        print_r($_POST);
+        print($radno_mjesto) . " ";
+        print($pocetak_rstemp) . " ";
+        print($pocetak_rs) . " ";
         
     }
     else{
         header('Location: pregled_zaposlenika.php');
-    }0
+    }
 ?>

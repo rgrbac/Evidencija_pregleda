@@ -1,14 +1,5 @@
 <?php
-    $con = mysqli_connect('127.0.0.1','root',''); //spajanje na server
-
-    if(!$con){
-		echo "Neuspjelo spajanje na bazu";
-    }
-    
-    if(!mysqli_select_db($con,'evzap')){ //spajanje na bazu
-		echo "Baza podataka nije izabrana";
-    }
-
+     require ("povezivanje.php");
     //fill varijable
     $id = $_GET['id'];
     $datum_pregleda = $_POST['datum_pregleda'];

@@ -63,12 +63,8 @@
             <div class="col">
                 <?php
 				
-                    $con=mysqli_connect("127.0.0.1","root",""); //spajanje na server
-                    
-                    if(!$con){
-                        die("Nesupjelo spajanje: " . mysqli_error());}
-                    
-                    mysqli_select_db($con,"evzap"); //spajanje na bazu
+                require ("povezivanje.php");
+
                     $sql = "SELECT zaposlenici.ID, zaposlenici.ime, zaposlenici.prezime, zaposlenici.mb, zaposlenici.oib, radna_mjesta.radno_mjesto AS rm, zaposlenici.pocetak_rs, zaposlenici.datum_pregleda, zaposlenici.datum_isteka_pregleda FROM zaposlenici, radna_mjesta WHERE zaposlenici.radno_mjesto = radna_mjesta.ID"; //sql upit za ispis zaposlenika
                     $myData = mysqli_query($con,$sql); //pull podataka iz baze
                     
@@ -84,6 +80,7 @@
                             <th scope="col">Početak radnog staža</th>
                             <th scope="col">Datum obavljenog pregleda</th>
                             <th scope="col">Datum isteka pregleda</th>
+                            <th scope="col"></th>
                             <th scope="col"></th>
                             <th scope="col"></th>
                             <th scope="col"></th>

@@ -47,12 +47,8 @@
   </div>
   <!--Ažuriranje-->
   <?php
-    $con=mysqli_connect("127.0.0.1","root",""); //spajanje na lokalni server s korisničkim imenom root i praznom lozinkom
-                    
-    if(!$con){
-        die("Nesupjelo spajanje: " . mysqli_error());} //poruka o neuspojelom spajanju
-    
-    mysqli_select_db($con,"evzap"); //spajanje na bazu 
+     require ("povezivanje.php");
+     
     $sql = "SELECT * FROM radna_mjesta WHERE ID='$_GET[id]'"; //sql upit za ispis
     $myData = mysqli_query($con,$sql); //pull podataka iz baze
     $record = mysqli_fetch_array($myData);

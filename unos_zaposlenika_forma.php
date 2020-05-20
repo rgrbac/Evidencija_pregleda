@@ -95,12 +95,10 @@
               echo "<div class='form-group'>
             <label for='radno_mjesto'>Radno mjesto:</label>
             <select type='text' class='form-control' id='radno_mjesto' name='radno_mjesto' aria-describedby='radno_mjestoHelp' required>";
-            $con=mysqli_connect("127.0.0.1","root",""); //spajanje na server
-                    
-            if(!$con){
-                die("Nesupjelo spajanje: " . mysqli_error());}
             
-            mysqli_select_db($con,"evzap"); //spajanje na bazu
+            require ("povezivanje.php");
+            
+           
             $sqlradno_mjesto = "SELECT * FROM radna_mjesta"; //sql upit za ispis
             $myDataradno_mjesto = mysqli_query($con,$sqlradno_mjesto);
             while ($recordradno_mjesto =mysqli_fetch_array($myDataradno_mjesto))

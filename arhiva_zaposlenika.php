@@ -63,12 +63,8 @@
             <div class="col">
                 <?php
 				
-                    $con=mysqli_connect("127.0.0.1","root",""); //spajanje na server
-                    
-                    if(!$con){
-                        die("Nesupjelo spajanje: " . mysqli_error());}
-                    
-                    mysqli_select_db($con,"evzap"); //spajanje na bazu
+                    require ("povezivanje.php");
+
                     $sql = "SELECT arhiva_zaposlenika.ID, arhiva_zaposlenika.ime, arhiva_zaposlenika.prezime, arhiva_zaposlenika.mb, arhiva_zaposlenika.oib, arhiva_zaposlenika.radno_mjesto , arhiva_zaposlenika.pocetak_rs, arhiva_zaposlenika.datum_pregleda, arhiva_zaposlenika.datum_isteka_pregleda, arhiva_zaposlenika.vrijeme_promjene FROM arhiva_zaposlenika"; //sql upit za ispis zaposlenika
                     $myData = mysqli_query($con,$sql); //pull podataka iz baze
                     
