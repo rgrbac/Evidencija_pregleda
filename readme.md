@@ -11,3 +11,6 @@ Za izgradnju ovog dinamičkog web sustava korišteni su sljedeći alati i tehnol
  - BOOTSTRAP 4.4.1
  - Visual Studio Code V 1.45.0
  - Node.js V12.8.1
+ 
+ WEB
+ https://eviz.cf
